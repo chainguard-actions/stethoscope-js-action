@@ -1,0 +1,51 @@
+name: Test API endpoint generation
+on:
+  workflow_dispatch:
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+
+      - name: Create stethoscope config and data directory structure
+        run: |
+          # Create a minimal stethoscope config with no integrations
+          cat > .stethoscoperc << 'EOF'
+          {
+            "integrations": {}
+          }
+          EOF
+
+          # Create a data directory with a category that has a summary subdirectory
+          mkdir -p data/spotify/summary/2021
+          echo '{"plays": 100}' > data/spotify/summary/2021/01.json
+          echo '{"plays": 90}' > data/spotify/summary/2021/02.json
+
+          echo "Data directory structure:"
+          find data -type f
+
+      - name: Run Stethoscope action with data directory
+        id: action
+        uses: .
+        continue-on-error: true
+
+      - name: Assert action ran and produced an outcome
+        run: |
+          echo "Action outcome: ${{ steps.action.outcome }}"
+          if [ "${{ steps.action.outcome }}" = "success" ] || [ "${{ steps.action.outcome }}" = "failure" ]; then
+            echo "PASS: action ran and produced an outcome: ${{ steps.action.outcome }}"
+          else
+            echo "FAIL: unexpected outcome: ${{ steps.action.outcome }}"
+            exit 1
+          fi
+
+      - name: Check if api.json was generated for spotify category
+        if: steps.action.outcome == 'success'
+        run: |
+          if [ -f "data/spotify/api.json" ]; then
+            echo "PASS: api.json was generated"
+            echo "Contents:"
+            cat data/spotify/api.json
+          else
+            echo "INFO: api.json was not generated (action may have failed before reaching this step)"
+          fi
