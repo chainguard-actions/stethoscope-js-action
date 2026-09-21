@@ -1,6 +1,16 @@
 {
   "owner": "stethoscope-js",
   "repo": "action",
-  "version": "",
-  "url": "https://github.com/stethoscope-js/action"
+  "version": "v1.2.8",
+  "commit_sha": "4357fad60dc341db60c8cd6cb5d963f5725f3c5b",
+  "url": "https://github.com/stethoscope-js/action",
+  "policy_sha": "d636be7e43ef829af6e853da6b3c7566db9f72fe",
+  "test_policy_sha": "843adf9e4b8f85d0c08b27b9d0b09dd094b54702",
+  "test_agent_version": "2",
+  "harden_agent_version": "2",
+  "node_artifact": {
+    "gcs_uri": "gs://prod-actions-node-artifacts/node-artifacts/stethoscope-js/action/v1.2.8/sha256-badcc4fe675a167f4fa32a9d1906a98d7e2d69e5fc3f5d2bec20b17e5a4bc783.tar.gz",
+    "sha256": "badcc4fe675a167f4fa32a9d1906a98d7e2d69e5fc3f5d2bec20b17e5a4bc783",
+    "size_bytes": 20357471
+  }
 }
