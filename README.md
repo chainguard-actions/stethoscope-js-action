@@ -6,10 +6,10 @@ Hardened by [Chainguard](https://www.chainguard.dev) from the upstream action at
 
 ## Versions
 
-| Version | Tag | Upstream commit |
-|---------|-----|-----------------|
-| v1.2.10 | [`v1.2.10`](https://github.com/chainguard-actions/stethoscope-js-action/tree/v1.2.10) | [`d25eac1`](https://github.com/stethoscope-js/action/commit/d25eac17d163753317b0b046151572ab99fb540a) |
-| v1.2.8 | [`v1.2.8`](https://github.com/chainguard-actions/stethoscope-js-action/tree/v1.2.8) | [`4357fad`](https://github.com/stethoscope-js/action/commit/4357fad60dc341db60c8cd6cb5d963f5725f3c5b) |
+| Version | Tag | Upstream commit | Hardening report |
+|---------|-----|-----------------|------------------|
+| v1.2.10 | [`v1.2.10`](https://github.com/chainguard-actions/stethoscope-js-action/tree/v1.2.10) | [`d25eac1`](https://github.com/stethoscope-js/action/commit/d25eac17d163753317b0b046151572ab99fb540a) | [`HARDENING.md`](https://github.com/chainguard-actions/stethoscope-js-action/blob/v1.2.10/HARDENING.md) |
+| v1.2.8 | [`v1.2.8`](https://github.com/chainguard-actions/stethoscope-js-action/tree/v1.2.8) | [`4357fad`](https://github.com/stethoscope-js/action/commit/4357fad60dc341db60c8cd6cb5d963f5725f3c5b) | [`HARDENING.md`](https://github.com/chainguard-actions/stethoscope-js-action/blob/v1.2.8/HARDENING.md) |
 
 ## Privacy
 
